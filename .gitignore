@@ -1,0 +1,4 @@
+# Ignore these directories:
+
+# Ignore temporary files:
+.DS_Store
