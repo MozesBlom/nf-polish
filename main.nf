@@ -146,9 +146,9 @@ if (!params.skip_dedup) {
         trimmomatic PE \
         -threads ${task.cpus} \
         $r1 $r2 \
-        ${sample_id}_R1_adapt.fastq.gz \
+        ${sample_id}_adapt_R1.fastq.gz \
         ${sample_id}_1_u.fastq.gz \
-        ${sample_id}_R2_adapt.fastq.gz \
+        ${sample_id}_adapt_R2.fastq.gz \
         ${sample_id}_2_u.fastq.gz \
         ILLUMINACLIP:${params.adapters}:2:30:10:8:TRUE
 
