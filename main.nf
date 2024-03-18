@@ -14,11 +14,17 @@ log.info """\
  * read_pairs2_ch --> use as input for superdeduper or directly into quality trim
  */
 
-
-Channel
-    .fromFilePairs( params.reads, flat:true )
-    .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
-    .into { read_pairs_ch; read_pairs2_ch } 
+if (params.specify_reads == true) {
+    .fromPath(params.reads_tsv_fn)
+    .splitCsv(header:true, sep:'\t')
+    .map { row -> tuple(row.ID, file(row.R1), file(row.R2)) }
+    .into { read_pairs_ch; read_pairs2_ch }
+} else {
+	Channel
+        .fromFilePairs( params.reads, flat:true )
+        .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
+        .into { read_pairs_ch; read_pairs2_ch } 
+}
 
 
 process fastqc {
