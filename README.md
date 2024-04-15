@@ -12,7 +12,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
 
 1. Install [`nextflow`](https://www.nextflow.io/) (version >= 19.04) 
 2. Install [`Conda`](https://conda.io/miniconda.html) (version >= 4.10) 
-3. Download the pipeline, create a nextflow config profile that matches your cluster set-up ( [`profile`]( https://www.nextflow.io/docs/latest/config.html#config-profiles) and start running your own analysis!
+3. Download the pipeline, create a nextflow config profile that matches your cluster set-up ( [`profile`]( https://www.nextflow.io/docs/latest/config.html#config-profiles) ) and start running your own analysis! If you want to use the existing `rackham.config` remember to specify your SNIC project ID (format: `snic20XX-XX-XXX`) as well as the path to `nf-polish/environment.yml`
 
     ```bash
     nextflow run nf-polish/main.nf -profile mfn --reads /path/to/'*_R{1,2}_L001.fastq.gz'
