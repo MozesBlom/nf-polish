@@ -184,7 +184,10 @@ ax[0].spines['top'].set_visible(False)
 ax[0].set_ylabel('Read number', fontweight="bold", fontsize=14, labelpad=20)
 ax[0].set_xlabel('')
 ax[0].set_title("Polishing overview for library %s" % (prefix), fontweight="bold", fontsize=24, pad=40)
-ax[0].get_legend().remove()
+try:
+	ax[0].get_legend().remove()
+except AttributeError:
+	pass
 ax[1].spines['right'].set_visible(False)
 ax[1].spines['top'].set_visible(False)
 ax[1].set_ylabel('Read length', fontweight="bold", fontsize=14, labelpad=20)

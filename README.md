@@ -10,7 +10,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool
 
 ## Quick Start
 
-1. Install [`nextflow`](https://www.nextflow.io/) (version >= 19.04) 
+1. Install [`nextflow`](https://www.nextflow.io/) (version >= 19.04 and <= 22.10. Still relies on Nextflow dsl1) 
 2. Install [`Conda`](https://conda.io/miniconda.html) (version >= 4.10) 
 3. Download the pipeline, create a nextflow config profile that matches your cluster set-up [`profile`]( https://www.nextflow.io/docs/latest/config.html#config-profiles) and start running your own analysis!
 
